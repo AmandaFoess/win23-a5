@@ -28,4 +28,30 @@ fi
 if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. success)...
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
+f
+
+# Test 04: Test addition
+if ! [[ $($CALCULATOR 5 + 5) -ne 10 ]]; then # if output is not correct
+  echo 'ERROR! A valid run of the calculator (5 + 5) failed to produce 10 as an output!'
+  exit 1
 fi
+
+# Test 05: Test subtraction
+if ! [[ $($CALCULATOR 5 - 5) -ne 0 ]]; then # if output is not correct
+  echo 'ERROR! A valid run of the calculator (5 - 5) failed to produce 0 as an output!'
+  exit 1
+fi
+
+# Test 06: Test multiplication
+if ! [[ $($CALCULATOR 5 * 5) -ne 25 ]]; then # if output is not correct
+  echo 'ERROR! A valid run of the calculator (5 * 5) failed to produce 25 as an output!'
+  exit 1
+fi
+
+# Test 07: Test division
+if ! [[ $($CALCULATOR 5 / 5) -ne 1 ]]; then # if output is not correct
+  echo 'ERROR! A valid run of the calculator (5 / 5) failed to produce 1 as an output!'
+  exit 1
+fi
+
+
